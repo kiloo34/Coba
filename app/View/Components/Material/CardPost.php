@@ -4,20 +4,16 @@ namespace App\View\Components\Material;
 
 use Illuminate\View\Component;
 
-class Title extends Component
+class CardPost extends Component
 {
-    public $opt, $title, $link;
-
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($opt, $title, $link)
+    public function __construct()
     {
-        $this->opt = $opt;
-        $this->title = $title;
-        $this->link = $link;
+        //
     }
 
     /**
@@ -27,6 +23,6 @@ class Title extends Component
      */
     public function render()
     {
-        return view('components.material.title');
+        return view('components.material.card-post');
     }
 }

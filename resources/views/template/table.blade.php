@@ -1,7 +1,8 @@
 @extends('layouts.myview')
 
 @section('content')
-<x-material.title />
+{{-- {{dd($link)}} --}}
+<x-material.title opt="true" :title="$title" :link="$link" />
 <div class="grid grid-cols-12 gap-6 mt-5">
     <div class="intro-y col-span-12 flex flex-wrap sm:flex-no-wrap items-center mt-2">
         @yield('intro')
@@ -16,22 +17,22 @@
 @endsection
 
 @push('css')
-    <link rel="stylesheet" href="{{ asset('plugins/DataTables/css/dataTables.bootstrap4.css') }}">
+<link rel="stylesheet" href="{{ asset('plugins/DataTables/css/dataTables.bootstrap4.css') }}">
 @endpush
 
 @push('js')
-    <script src="{{ asset('plugins/DataTables/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('plugins/DataTables/js/dataTables.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('plugins/DataTables/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('plugins/DataTables/js/dataTables.bootstrap4.min.js') }}"></script>
 @endpush
 
 @push('script')
-    <script>
-        $(document).ready(function() {
+<script>
+    $(document).ready(function() {
             $('#dt').DataTable({});
         });
-    </script>
+</script>
 @endpush
 
 @prepend('js')
-    <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
 @endprepend

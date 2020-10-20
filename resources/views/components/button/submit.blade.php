@@ -1,1 +1,1 @@
- <button class="button w-24 rounded-full mr-1 mb-2 bg-theme-1 text-white">Submit</button>
+<input type="submit" {{ $attributes->merge(['class' => '']) }} value="{{ ucfirst($label) }}">

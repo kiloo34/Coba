@@ -13,16 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('template.post');
-// });
+Route::get('/', function () {
+    return view('guest');
+});
 
-Route::get('/', 'HomeController@index')->name('dashboard');
-
-Route::resource('post', 'PostController');
-Route::resource('alternatif', 'AlternativeController');
-Route::resource('kriteria', 'CriteriaController');
+// Route::get('/', 'HomeController@index')->name('dashboard');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::resource('roles', 'RoleController');
+    Route::resource('users', 'UserController');
+    Route::resource('alternatif', 'AlternativeController');
+    Route::resource('kriteria', 'CriteriaController');
+    Route::resource('post', 'PostController');
+});
+
+// Route::resource('post', 'PostController');
+
+
+// Route::get('/home', 'HomeController@index')->name('home');

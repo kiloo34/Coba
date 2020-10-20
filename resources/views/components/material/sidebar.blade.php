@@ -6,27 +6,29 @@
     <div class="side-nav__devider my-6"></div>
     <ul>
         <li>
-            <a href="{{ route('dashboard') }}" class="side-menu {{ request()->is('/') ? 'side-menu--active' : '' }}">
+            <a href="{{ route('dashboard') }}"
+                class="side-menu {{ request()->is('dashboard') ? 'side-menu--active' : '' }}">
                 <div class="side-menu__icon"> <i data-feather="home"></i> </div>
                 <div class="side-menu__title"> Dashboard </div>
             </a>
         </li>
         <li class="side-nav__devider my-6"></li>
         <li>
-            <a href="javascript:;.html" class="side-menu {{ request()->is('kriteria') || request()->is('alternatif')  ? 'side-menu--active' : '' }}">
+            <a href="javascript:;.html"
+                class="side-menu {{ request()->is('kriteria') || request()->is('alternatif')  ? 'side-menu--active' : '' }}">
                 <div class="side-menu__icon"> <i data-feather="edit"></i> </div>
-                <div class="side-menu__title"> Data Sapi <i data-feather="chevron-down"
-                        class="side-menu__sub-icon"></i> </div>
+                <div class="side-menu__title"> Data Sapi <i data-feather="chevron-down" class="side-menu__sub-icon"></i>
+                </div>
             </a>
             <ul class="">
                 <li>
-                    <a href="side-menu-crud-data-list.html" class="side-menu">
+                    <a href="{{ route('kriteria.index') }}" class="side-menu">
                         <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
                         <div class="side-menu__title"> Kriteria </div>
                     </a>
                 </li>
                 <li>
-                    <a href="side-menu-crud-form.html" class="side-menu">
+                    <a href="{{ route('alternatif.index') }}" class="side-menu">
                         <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
                         <div class="side-menu__title"> Alternatif </div>
                     </a>
@@ -41,9 +43,18 @@
         </li>
         <li class="side-nav__devider my-6"></li>
         <li>
-            <a href="{{ route('post.index') }}" class="side-menu {{ request()->is('post') ? 'side-menu--active' : '' }}">
+            <a href="{{ route('post.index') }}"
+                class="side-menu {{ request()->is('post') ? 'side-menu--active' : '' }}">
                 <div class="side-menu__icon"> <i data-feather="book"></i> </div>
                 <div class="side-menu__title"> Post </div>
+            </a>
+        </li>
+        <li class="side-nav__devider my-6"></li>
+        <li>
+            <a href="{{ route('post.index') }}"
+                class="side-menu {{ request()->is('/post') ? 'side-menu--active' : '' }}">
+                <div class="side-menu__icon"> <i data-feather="settings"></i> </div>
+                <div class="side-menu__title"> Hak Akses </div>
             </a>
         </li>
     </ul>

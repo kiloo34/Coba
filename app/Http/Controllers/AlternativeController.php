@@ -14,7 +14,7 @@ class AlternativeController extends Controller
      */
     public function index()
     {
-        return view('alternative', [
+        return view('alternatif.alternative', [
             'title'     => 'alternatif',
             'subtitle'  => '',
 

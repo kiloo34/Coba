@@ -14,10 +14,10 @@ class CriteriaController extends Controller
      */
     public function index()
     {
-        return view('criteria', [
+        return view('kriteria.criteria', [
             'title'     => 'kriteria',
             'subtitle'  => '',
-
+            'link'      => route('kriteria.create')
         ]);
     }
 

@@ -1,4 +1,3 @@
-@foreach ($posts as $p)
 <div class="intro-y blog col-span-12 md:col-span-6 box">
     <div class="blog__preview image-fit">
         <img alt="Midone Tailwind HTML Admin Template" class="rounded-t-md" src="dist/images/preview-10.jpg">
@@ -7,7 +6,7 @@
                 <img alt="Midone Tailwind HTML Admin Template" class="rounded-full" src="dist/images/profile-4.jpg">
             </div>
             <div class="ml-3 text-white mr-auto">
-                <a href="" class="font-medium">{{ $p->user->name }}</a>
+                <a href="" class="font-medium">Russell Crowe</a>
                 <div class="text-xs">29 minutes ago</div>
             </div>
             <div class="dropdown relative ml-3">
@@ -26,17 +25,18 @@
                 </div>
             </div>
         </div>
-        <div class="absolute bottom-0 text-white px-5 pb-6 z-10">
-            <span class="blog__category px-2 py-1 rounded">PC &amp; Laptop</span>
-            <a href="" class="block font-medium text-xl mt-3">{{ $p->title }}</a>
-        </div>
+        <div class="absolute bottom-0 text-white px-5 pb-6 z-10"> <span class="blog__category px-2 py-1 rounded">PC
+                &amp; Laptop</span> <a href="" class="block font-medium text-xl mt-3">Desktop publishing software like
+                Aldus
+                PageMaker</a> </div>
     </div>
-    <div class="p-5 text-gray-700">{{ substr($p->content, 0, 150) }}</div>
+    <div class="p-5 text-gray-700">Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry&#039;s standard dummy text ever since the 1500</div>
     <div class="flex items-center px-5 py-3 border-t border-gray-200">
-        {{-- <a href=""
+        <a href=""
             class="intro-x w-8 h-8 flex items-center justify-center rounded-full border border-gray-500 text-gray-600 mr-2 tooltip"
-            title="Bookmark"> <i data-feather="bookmark" class="w-3 h-3"></i> </a> --}}
-        {{-- <div class="intro-x flex mr-2">
+            title="Bookmark"> <i data-feather="bookmark" class="w-3 h-3"></i> </a>
+        <div class="intro-x flex mr-2">
             <div class="intro-x w-8 h-8 image-fit">
                 <img alt="Midone Tailwind HTML Admin Template" class="rounded-full border border-white zoom-in tooltip"
                     src="dist/images/profile-4.jpg" title="Russell Crowe">
@@ -49,7 +49,7 @@
                 <img alt="Midone Tailwind HTML Admin Template" class="rounded-full border border-white zoom-in tooltip"
                     src="dist/images/profile-13.jpg" title="Christian Bale">
             </div>
-        </div> --}}
+        </div>
         <a href=""
             class="intro-x w-8 h-8 flex items-center justify-center rounded-full bg-theme-14 text-theme-10 ml-auto tooltip"
             title="Share"> <i data-feather="share-2" class="w-3 h-3"></i> </a>
@@ -74,9 +74,4 @@
             </div>
         </div>
     </div>
-</div>
-@endforeach
-
-<div class="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-no-wrap items-center">
-    {{ $posts->links() }}
 </div>

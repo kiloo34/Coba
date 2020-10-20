@@ -6,15 +6,16 @@ use Illuminate\View\Component;
 
 class Add extends Component
 {
-    public $label;
+    public $label, $link;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($label)
+    public function __construct($label, $link)
     {
         $this->label = $label;
+        $this->link = $link;
     }
 
     /**

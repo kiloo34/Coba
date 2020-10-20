@@ -1,14 +1,14 @@
 @extends('layouts.myview')
 
 @section('content')
-<x-material.title />
+<x-material.title opt="false" :title="$title" :link="$link" />
 <div class="grid grid-cols-12 gap-6 mt-5">
     <div class="intro-y col-span-12 lg:col-span-12">
         {{-- grid grid-cols-12 gap-6 mt-5 --}}
         <div class="intro-y box">
             <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200">
                 <h2 class="font-medium text-base mr-auto">
-                    Input 
+                    Input
                 </h2>
                 {{-- tunggu sampe kelaar --}}
             </div>
