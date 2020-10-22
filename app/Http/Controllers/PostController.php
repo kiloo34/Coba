@@ -15,7 +15,8 @@ class PostController extends Controller
     {
         return view('post.post', [
             'title'     => 'post',
-            'subtitle'  => ''
+            'subtitle'  => '',
+            'link'      => ''
         ]);
     }
 

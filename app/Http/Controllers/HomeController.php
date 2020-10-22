@@ -25,7 +25,8 @@ class HomeController extends Controller
     {
         return view('dash', [
             'title'     => 'dashboard',
-            'subtitle'  => ''
+            'subtitle'  => '',
+            'link'      => ''
         ]);
     }
 }

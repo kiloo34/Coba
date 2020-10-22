@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Alternative;
 use Illuminate\Database\Seeder;
 
 class AlternativeSeeder extends Seeder
@@ -13,6 +14,16 @@ class AlternativeSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $alternatif = [
+            ['name' => 'Lemosin'],
+            ['name' => 'Simental'],
+            ['name' => 'PO'],
+            ['name' => 'Madura'],
+            ['name' => 'Bali']
+        ];
+
+        foreach ($alternatif as $a) {
+            Alternative::insert($a);
+        }
     }
 }

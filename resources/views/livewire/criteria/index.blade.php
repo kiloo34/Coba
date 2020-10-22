@@ -11,11 +11,13 @@
     <tr class="intro-x">
         <td>{{$count}}</td>
         <td>
-            <div class="font-medium whitespace-no-wrap">Sony A7 III</div>
+            <div class="font-medium whitespace-no-wrap">{{ ucfirst($k->name) }}</div>
         </td>
         <td class="table-report__action w-56">
-            <x-button.update />
-            <x-button.delete />
+            <div class="flex justify-center items-center">
+                <x-button.update wire:click="show({{$k->id}})" />
+                <x-button.delete wire:click="$emit('destroy', {{$k->id}})" />
+            </div>
         </td>
     </tr>
     <?php $count++ ?>
@@ -28,3 +30,30 @@
         <th class="text-center whitespace-no-wrap">Action</th>
     </tr>
 </tfoot>
+
+@push('script')
+    <script>
+        document.addEventListener('livewire:load', function () {
+            @this.on('destroy', idKriteria => {
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                        )
+                    }
+                })
+            })
+        })
+    </script>
+     
+@endpush

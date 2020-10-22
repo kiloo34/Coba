@@ -3,5 +3,5 @@
     
 @endsection
 @section('table')
-    @livewire('alternative.create')
+    @livewire('alternatif.index')
 @endsection

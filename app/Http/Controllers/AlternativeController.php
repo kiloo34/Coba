@@ -17,7 +17,7 @@ class AlternativeController extends Controller
         return view('alternatif.alternative', [
             'title'     => 'alternatif',
             'subtitle'  => '',
-
+            'link'      => ''
         ]);
     }
 

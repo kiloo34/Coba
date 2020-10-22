@@ -18,6 +18,8 @@
 
 @push('css')
 <link rel="stylesheet" href="{{ asset('plugins/DataTables/css/dataTables.bootstrap4.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.3.5/sweetalert2.css">
+<link rel="stylesheet" href="{{ asset('plugins/sweetalert2/sweetalert2.min.css') }}">
 @endpush
 
 @push('js')
@@ -31,8 +33,10 @@
             $('#dt').DataTable({});
         });
 </script>
+
 @endpush
 
 @prepend('js')
 <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('plugins/sweetalert2/sweetalert2.min.js') }}"></script>
 @endprepend

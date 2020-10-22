@@ -6,6 +6,7 @@ use Illuminate\View\Component;
 
 class Update extends Component
 {
+    // public $click;
     /**
      * Create a new component instance.
      *
@@ -13,7 +14,7 @@ class Update extends Component
      */
     public function __construct()
     {
-        //
+        // $this->click = $click;
     }
 
     /**

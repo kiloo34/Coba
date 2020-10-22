@@ -15,10 +15,10 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
         <link href="{{ asset('dist/css/app.css') }}" rel="stylesheet">
-
+        
         @stack('css')
+        @livewireStyles
         @stack('style')
-
     </head>
 
     <body class="app">
@@ -34,10 +34,10 @@
 
 
         <script src="{{ asset('dist/js/app.js') }}"></script>
-
+        
         @stack('js')
+        @livewireScripts
         @stack('script')
-
     </body>
 
 </html>

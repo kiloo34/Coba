@@ -7,6 +7,7 @@ use Livewire\Component;
 
 class Index extends Component
 {
+    protected $listener = ['store', 'update'];
     public function render()
     {
         $data = Criteria::all();
@@ -27,11 +28,16 @@ class Index extends Component
             'name' => 'required|min:5',
         ]);
 
-        Post::create([
+        Criteria::create([
             'name' => $this->name
         ]);
 
         $this->resetInput();
+    }
+
+    public function show($id)
+    {
+        $data = Criteria::findOrFail($id);
     }
 
     public function edit($id)
@@ -54,7 +60,7 @@ class Index extends Component
         ]);
 
         if ($this->selected_id) {
-            $record = Criteria::find($this->selected_id);
+            $record = Criteria::findOrFail($this->selected_id);
             $record->update([
                 'name' => $this->name,
                 'phone' => $this->phone
@@ -67,9 +73,9 @@ class Index extends Component
 
     public function destroy($id)
     {
-        if ($id) {
-            $record = Criteria::where('id', $id);
-            $record->delete();
-        }
+        dd('kriteria');
+        $data = Criteria::find($id);
+        $data->delete();
+        session()->flash('message', 'Kriteria Berhasil Dihapus');
     }
 }
